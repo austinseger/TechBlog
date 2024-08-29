@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
 
-    console.log('Form submitted'); // Debugging line
-    console.log('Title:', title); // Debugging line
-    console.log('Content:', content); // Debugging line
+    console.log('Form submitted'); 
+    console.log('Title:', title); 
+    console.log('Content:', content); 
 
     if (title && content) {
       try {
@@ -17,20 +17,20 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'Content-Type': 'application/json' },
         });
 
-        console.log('Response status:', response.status); // Debugging line
+        console.log('Response status:', response.status); 
 
         if (response.status === 401) {
           alert('You must be logged in to create a post.');
-          document.location.replace('/login'); // Redirect to login page
+          document.location.replace('/login'); 
         } else if (response.ok) {
-          document.location.replace('/dashboard'); // Redirect to dashboard if successful
+          document.location.replace('/dashboard'); 
         } else {
           const errorMsg = await response.json();
-          console.error('Error message:', errorMsg); // Debugging line
+          console.error('Error message:', errorMsg); 
           alert('Failed to create post: ' + errorMsg.message);
         }
       } catch (error) {
-        console.error('Fetch error:', error); // Debugging line
+        console.error('Fetch error:', error); 
         alert('Failed to create post due to a network or server issue.');
       }
     } else {

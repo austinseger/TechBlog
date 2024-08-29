@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.ok) {
-        document.location.replace('/login'); // Redirect to login page after logging out
+        document.location.replace('/login'); 
       } else {
         alert('Failed to log out.');
       }

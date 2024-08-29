@@ -25,10 +25,10 @@ Post.init(
   {
     sequelize,
     timestamps: true,
-    freezeTableName: true, // Ensures the table name is not pluralized
+    freezeTableName: true, 
     underscored: true,
-    modelName: 'post', // This ensures that the model uses the 'post' table
-    tableName: 'post', // Explicitly set the table name to 'post'
+    modelName: 'post', 
+    tableName: 'post', 
   }
 );
 

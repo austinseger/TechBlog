@@ -1,4 +1,3 @@
-// Handles adding comments
 document.addEventListener('DOMContentLoaded', () => {
     const commentFormHandler = async (event) => {
       event.preventDefault();

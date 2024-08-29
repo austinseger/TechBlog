@@ -1,8 +1,6 @@
-// controllers/api/commentRoutes.js
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
-// Route to create a new comment
 router.post('/', async (req, res) => {
   try {
     if (!req.session.userId) {
@@ -12,7 +10,7 @@ router.post('/', async (req, res) => {
     const newComment = await Comment.create({
       content: req.body.content,
       postId: req.body.postId,
-      userId: req.session.userId,  // Assuming the user is logged in
+      userId: req.session.userId,  
     });
 
     res.status(200).json(newComment);
@@ -22,7 +20,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Route to get comments for a specific post
 router.get('/:postId', async (req, res) => {
   try {
     const comments = await Comment.findAll({
@@ -38,13 +35,12 @@ router.get('/:postId', async (req, res) => {
   }
 });
 
-// Route to delete a comment (if you want to add this feature)
 router.delete('/:id', async (req, res) => {
   try {
     const commentData = await Comment.destroy({
       where: {
         id: req.params.id,
-        userId: req.session.userId,  // Ensure the logged-in user is the owner of the comment
+        userId: req.session.userId,  
       },
     });
 

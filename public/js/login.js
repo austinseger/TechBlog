@@ -1,4 +1,3 @@
-// public/js/login.js
 document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.querySelector('.signup-form');
   

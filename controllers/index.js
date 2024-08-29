@@ -1,13 +1,12 @@
-// controllers/index.js
 const router = require('express').Router();
 const homeRoutes = require('./homeRoutes');
-const userRoutes = require('./api/userRoutes'); // Import userRoutes
+const userRoutes = require('./api/userRoutes'); 
 const commentRoutes = require('./api/commentRoutes');
 const postRoutes = require('./api/postRoutes');
 const apiRoutes = require('./api');
 
-router.use('/', homeRoutes); // Use homeRoutes for basic routes
-router.use('/api/users', userRoutes); // Use userRoutes for /api/users path
+router.use('/', homeRoutes); 
+router.use('/api/users', userRoutes);
 router.use('/api/comments', commentRoutes);
 router.use('/api/posts', postRoutes);
 router.use('/api', apiRoutes);
